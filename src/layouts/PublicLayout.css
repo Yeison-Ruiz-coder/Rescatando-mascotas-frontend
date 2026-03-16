@@ -1,0 +1,41 @@
+.public-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.public-main-content {
+  flex: 1;
+  margin-top: 80px; /* Altura del navbar */
+  padding: 30px 20px; /* Aumentado el padding horizontal y vertical */
+  background: transparent;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px; /* ¡ESTO ES LO IMPORTANTE! Padding horizontal */
+  background: transparent;
+}
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .public-main-content {
+    padding: 20px 15px;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .public-main-content {
+    padding: 15px 10px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}

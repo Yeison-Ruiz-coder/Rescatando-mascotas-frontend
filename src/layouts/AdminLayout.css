@@ -1,0 +1,29 @@
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.admin-main-content {
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+  margin-top: 80px; /* Altura del navbar */
+  min-height: calc(100vh - 80px);
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+.admin-main-content.shifted {
+  margin-left: 320px;
+}
+
+@media (max-width: 768px) {
+  .admin-main-content.shifted {
+    margin-left: 0;
+  }
+  
+  .admin-main-content {
+    padding: 15px;
+  }
+}
