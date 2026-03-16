@@ -1,48 +1,54 @@
-/* ===== ESTILOS GLOBALES ===== */
+/* ===== ESTILOS GLOBALES CON MÁXIMA PRIORIDAD ===== */
 html, body {
   background: -webkit-repeating-radial-gradient(black, #10141f, #1A2032) !important;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  background: repeating-radial-gradient(black, #10141f, #1A2032) !important;
+  min-height: 100vh !important;
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-  color: white;
+  color: white !important;
 }
 
 #root {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  min-height: 100vh;
+  background: transparent !important;
+  min-height: 100vh !important;
+  width: 100% !important;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  background: transparent;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Forzar fondo oscuro en todos los contenedores principales */
+div[class*="layout"],
+div[class*="wrapper"],
+main,
+section,
+article {
+  background: transparent !important;
 }
 
-/* Estilos para textos en general */
-h1, h2, h3, h4, h5, h6 {
-  color: white;
-  margin-bottom: 1rem;
+/* Eliminar fondos blancos de Bootstrap */
+.bg-white,
+.bg-light,
+.card,
+.modal-content,
+.dropdown-menu,
+.form-control,
+.form-select 
+
+/* Solo las tarjetas de mascotas deben tener fondo blanco */
+
+
+
+/* Filtros con fondo blanco */
+
+/* Navbar debe mantener su color original */
+.navbar {
+  background: white !important;
 }
 
-p {
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-a {
-  color: #667eea;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: #764ba2;
+/* Footer con gradiente */
+footer {
+  background: linear-gradient(135deg, #764ba2, #667eea) !important;
 }

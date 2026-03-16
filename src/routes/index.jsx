@@ -15,8 +15,12 @@ import Mascotas from '../pages/public/Mascotas/Mascotas';
 import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
 
-// ===== PÁGINAS DE ADMIN =====
-// Dashboard
+// ===== PÁGINAS DE ADMIN (importamos los componentes reales) =====
+// Solo importamos los que YA CREAMOS
+import AdminMascotas from '../pages/admin/mascotas/AdminMascotas';
+import AdminMascotasNueva from '../pages/admin/mascotas/AdminMascotasNueva';
+
+// Dashboard (se queda igual por ahora)
 const AdminDashboard = () => (
   <div className="admin-dashboard">
     <h1>Dashboard Administrador</h1>
@@ -24,55 +28,42 @@ const AdminDashboard = () => (
   </div>
 );
 
-// Mascotas
-const AdminMascotas = () => (
-  <div className="admin-page">
-    <h1>Gestión de Mascotas</h1>
-  </div>
-);
-
-const AdminMascotasNueva = () => (
-  <div className="admin-page">
-    <h1>Registrar Nueva Mascota</h1>
-  </div>
-);
-
-// Adopciones
+// Adopciones (se queda igual por ahora)
 const AdminAdopciones = () => (
   <div className="admin-page">
     <h1>Gestión de Adopciones</h1>
   </div>
 );
 
-// Usuarios
+// Usuarios (se queda igual por ahora)
 const AdminUsuarios = () => (
   <div className="admin-page">
     <h1>Gestión de Usuarios</h1>
   </div>
 );
 
-// Donaciones
+// Donaciones (se queda igual por ahora)
 const AdminDonaciones = () => (
   <div className="admin-page">
     <h1>Gestión de Donaciones</h1>
   </div>
 );
 
-// Eventos
+// Eventos (se queda igual por ahora)
 const AdminEventos = () => (
   <div className="admin-page">
     <h1>Gestión de Eventos</h1>
   </div>
 );
 
-// Reportes
+// Reportes (se queda igual por ahora)
 const AdminReportes = () => (
   <div className="admin-page">
     <h1>Reportes y Estadísticas</h1>
   </div>
 );
 
-// Configuración
+// Configuración (se queda igual por ahora)
 const AdminConfiguracion = () => (
   <div className="admin-page">
     <h1>Configuración</h1>
@@ -120,41 +111,36 @@ const router = createBrowserRouter([
             path: 'dashboard',
             element: <AdminDashboard />
           },
-          // Mascotas
+          // ===== MASCOTAS (AHORA USAN LOS COMPONENTES IMPORTADOS) =====
           {
             path: 'mascotas',
-            element: <AdminMascotas />
+            element: <AdminMascotas />  // 👈 AHORA USA EL COMPONENTE REAL
           },
           {
             path: 'mascotas/nueva',
-            element: <AdminMascotasNueva />
+            element: <AdminMascotasNueva />  // 👈 AHORA USA EL COMPONENTE REAL
           },
-          // Adopciones
+          // Las demás rutas se quedan IGUAL
           {
             path: 'adopciones',
             element: <AdminAdopciones />
           },
-          // Usuarios
           {
             path: 'usuarios',
             element: <AdminUsuarios />
           },
-          // Donaciones
           {
             path: 'donaciones',
             element: <AdminDonaciones />
           },
-          // Eventos
           {
             path: 'eventos',
             element: <AdminEventos />
           },
-          // Reportes
           {
             path: 'reportes',
             element: <AdminReportes />
           },
-          // Configuración
           {
             path: 'configuracion',
             element: <AdminConfiguracion />

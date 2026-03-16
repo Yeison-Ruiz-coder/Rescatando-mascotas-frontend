@@ -1,0 +1,556 @@
+/* ===== VARIABLES (tus colores originales) ===== */
+:root {
+    --color-turquesa: #764ba2;
+    --color-fucsia: #667eea;
+    --color-fucsia-hover: #667eead3;
+    --color-gris-claro: #f4f4f4;
+    --color-texto-claro: #fff;
+    --color-texto-oscuro: #333;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.admin-mascotas-container {
+    min-height: 100vh;
+    padding: 2rem;
+    background: transparent;
+    color: white;
+    width: 100%;
+}
+
+/* ===== HEADER - IGUAL A LARAVEL ===== */
+.mascotas-header {
+    background: linear-gradient(135deg, var(--color-turquesa), #9b7bb5);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.mascotas-header h1 {
+    color: white !important;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.mascotas-header .lead {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.2rem;
+}
+
+/* ===== ACCIONES PRINCIPALES ===== */
+.btn-nueva-mascota {
+    background-color: var(--color-fucsia) !important;
+    border-color: var(--color-fucsia) !important;
+    color: white !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-nueva-mascota:hover {
+    background-color: var(--color-fucsia-hover) !important;
+    border-color: var(--color-fucsia-hover) !important;
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+.total-badge {
+    background-color: var(--color-turquesa) !important;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.total-badge i {
+    color: white;
+}
+
+/* ===== FILTROS - FONDO BLANCO Y FLECHAS NORMALES ===== */
+.filtros-card {
+    background: white !important;
+    border: none !important;
+    border-radius: 15px !important;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+    width: 100%;
+}
+
+.filtros-card .card-body {
+    padding: 1.5rem;
+}
+
+.filtros-card .form-label {
+    color: #764ba2 !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.filtros-card .form-label i {
+    color: #667eea;
+    margin-right: 0.5rem;
+}
+
+.filtros-card .form-control,
+.filtros-card .form-select {
+    border: 2px solid #e9ecef !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    color: #333 !important;
+    font-size: 0.9rem;
+    background: white !important;
+    height: 38px !important;
+    transition: all 0.3s ease;
+}
+
+/* SELECT CON FLECHA NORMAL - TAMAÑO CORRECTO */
+.filtros-card .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23764ba2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 12px 12px !important;  /* Tamaño fijo pequeño */
+    padding-right: 2rem !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+/* Para navegadores específicos */
+.filtros-card .form-select::-ms-expand {
+    display: none !important;
+}
+
+.filtros-card .form-control:focus,
+.filtros-card .form-select:focus {
+    border-color: #764ba2 !important;
+    box-shadow: 0 0 0 0.2rem rgba(118, 75, 162, 0.25) !important;
+    outline: none;
+}
+
+.filtros-card .form-control::placeholder {
+    color: #aaa !important;
+    font-size: 0.85rem;
+}
+
+/* Botón Filtrar */
+.btn-filtrar {
+    background-color: #764ba2 !important;
+    border-color: #764ba2 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 0.5rem 1rem !important;
+    height: 38px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-filtrar:hover {
+    background-color: #9b7bb5 !important;
+    border-color: #9b7bb5 !important;
+}
+
+/* Botón Limpiar */
+.btn-limpiar {
+    background: transparent !important;
+    border: 2px solid #e9ecef !important;
+    color: #6c757d !important;
+    border-radius: 8px !important;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-limpiar:hover {
+    background-color: #e9ecef !important;
+}
+
+/* ===== TARJETAS DE ESTADÍSTICAS ===== */
+.stat-card {
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.9;
+}
+
+.stat-info h4 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white !important;
+}
+
+.stat-info p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+    color: white !important;
+}
+
+/* Colores específicos para cada stat */
+.stat-card.bg-success {
+    background-color: #28a745 !important;
+}
+
+.stat-card.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.stat-card.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.stat-card.bg-warning .stat-info h4,
+.stat-card.bg-warning .stat-info p {
+    color: #333 !important;
+}
+
+.stat-card.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+/* ===== TARJETAS DE MASCOTAS - BLANCAS CON BOTONES ORIGINALES ===== */
+.mascota-card {
+    background: white !important;
+    border: none !important;
+    border-radius: 15px !important;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.mascota-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Imagen */
+.mascota-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.mascota-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Badge de estado */
+.mascota-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    z-index: 10;
+}
+
+.badge-adopcion {
+    background-color: #28a745 !important;
+}
+
+.badge-adoptado {
+    background-color: #17a2b8 !important;
+}
+
+.badge-rescatada {
+    background-color: #ffc107 !important;
+    color: #333 !important;
+}
+.badge-acogida{
+    background-color: #b82a17 !important;
+}
+
+/* Contenido de la tarjeta */
+.mascota-card .card-body {
+    padding: 1.25rem;
+    background: white;
+}
+
+.mascota-nombre {
+    color: #764ba2 !important;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Badges de info (género, edad, especie) */
+.mascota-card .badge.bg-secondary {
+    background-color: #f4f4f4 !important;
+    color: #333 !important;
+    padding: 0.3rem 0.8rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.mascota-card .badge.bg-secondary i {
+    color: #667eea;
+    margin-right: 0.3rem;
+}
+
+/* Texto de lugar y descripción */
+.mascota-card .text-white-50 {
+    color: #666 !important;
+}
+
+.mascota-card .card-text {
+    color: #666 !important;
+}
+
+/* Badge hogar temporal */
+.mascota-card .badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #333 !important;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.mascota-card .badge.bg-warning i {
+    color: #d97706;
+}
+
+/* ===== BOTONES DE ACCIÓN - VERSIÓN ORIGINAL ===== */
+.mascota-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-ver {
+    background-color: #764ba2 !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    flex: 1;
+}
+
+.btn-ver:hover {
+    background-color: #9b7bb5 !important;
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+.btn-editar {
+    background: transparent !important;
+    border: 2px solid #667eea !important;
+    color: #667eea !important;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    flex: 1;
+}
+
+.btn-editar:hover {
+    background-color: #667eea !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* ===== PAGINACIÓN ===== */
+.mascotas-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.pagination {
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.page-item .page-link {
+    color: var(--color-turquesa) !important;
+    border: none;
+    background: transparent;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 50px;
+    text-align: center;
+}
+
+.page-item .page-link:hover {
+    background: rgba(118, 75, 162, 0.1);
+    color: var(--color-turquesa) !important;
+    transform: translateY(-2px);
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(135deg, var(--color-turquesa), #9b7bb5) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+}
+
+/* ===== ESTILOS PARA ESTADO VACÍO ===== */
+.empty-state {
+    background: white;
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.empty-state i.fa-paw {
+    font-size: 5rem;
+    color: #764ba2;
+    opacity: 0.3;
+    margin-bottom: 1.5rem;
+}
+
+.empty-state h3 {
+    color: #2d3748 !important;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: #718096 !important;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Botón Ver todas las mascotas */
+.empty-state .btn-primary {
+    background: linear-gradient(135deg, #764ba2, #9b7bb5) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 2rem !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.empty-state .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.4);
+}
+
+.empty-state .btn-primary i {
+    font-size: 0.9rem;
+}
+
+/* Botón Crear Nueva Mascota */
+.empty-state .btn-success {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 2rem !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.empty-state .btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .empty-state {
+        padding: 2rem 1rem;
+    }
+    
+    .empty-state h3 {
+        font-size: 1.5rem;
+    }
+    
+    .empty-state .btn-primary,
+    .empty-state .btn-success {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .admin-mascotas-container {
+        padding: 1rem;
+    }
+
+    .mascotas-header {
+        padding: 2rem 1rem;
+    }
+
+    .mascotas-header h1 {
+        font-size: 2rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .stat-info h4 {
+        font-size: 1.5rem;
+    }
+
+    .filtros-card .card-body {
+        padding: 1rem;
+    }
+}

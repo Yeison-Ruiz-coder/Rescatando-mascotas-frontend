@@ -36,6 +36,7 @@
 .footer-content-wrapper {
   position: relative;
   z-index: 2;
+  top: 40px;
   margin: 0 auto;
   padding: 60px 0 30px;
   max-width: 1200px;

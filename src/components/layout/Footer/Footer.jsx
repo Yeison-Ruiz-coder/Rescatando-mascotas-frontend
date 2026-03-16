@@ -31,7 +31,6 @@ const Footer = () => {
               alt="Logo Rescatando Mascotas Forever" 
               className="footer-logo mb-3"
             />
-            <p className="footer-mission">{t('footer.mision')}</p>
           </div>
 
           {/* Contacto */}
