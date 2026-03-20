@@ -1,54 +1,118 @@
-/* ===== ESTILOS GLOBALES CON MÁXIMA PRIORIDAD ===== */
-html, body {
-  background: -webkit-repeating-radial-gradient(black, #10141f, #1A2032) !important;
-  background: repeating-radial-gradient(black, #10141f, #1A2032) !important;
-  min-height: 100vh !important;
-  height: 100% !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-  color: white !important;
+/* src/index.css o src/App.css */
+
+/* Variables de color - Deben coincidir con tu style.css original */
+:root {
+    /* COLORES PRINCIPALES */
+    --color-turquesa: #764ba2;
+    --color-fucsia: #667eea;
+    --color-fucsia-hover: #5a67d8;
+    --color-gris-claro: #f4f4f4;
+
+    /* COLORES DE TEXTO */
+    --color-texto-claro: #fff;
+    --color-texto-oscuro: #333;
+
+    /* TIPOGRAFÍA */
+    --fuente-principal: 'Roboto', sans-serif;
 }
 
-#root {
-  background: transparent !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  display: flex;
-  flex-direction: column;
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Forzar fondo oscuro en todos los contenedores principales */
-div[class*="layout"],
-div[class*="wrapper"],
-main,
-section,
-article {
-  background: transparent !important;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Eliminar fondos blancos de Bootstrap */
-.bg-white,
-.bg-light,
-.card,
-.modal-content,
-.dropdown-menu,
-.form-control,
-.form-select 
-
-/* Solo las tarjetas de mascotas deben tener fondo blanco */
-
-
-
-/* Filtros con fondo blanco */
-
-/* Navbar debe mantener su color original */
-.navbar {
-  background: white !important;
+body {
+    font-family: var(--fuente-principal, sans-serif);
+    color: var(--color-texto-oscuro);
+    background: linear-gradient(135deg, #1a1f2e 0%, #0f1119 100%);
+    min-height: 100vh;
 }
 
-/* Footer con gradiente */
-footer {
-  background: linear-gradient(135deg, #764ba2, #667eea) !important;
+/* ========== CLASES DE UTILIDAD ========== */
+
+/* Colores de fondo */
+.bg-turquesa {
+    background-color: var(--color-turquesa) !important;
+}
+
+.bg-fucsia {
+    background-color: var(--color-fucsia) !important;
+}
+
+.bg-fucsia-hover:hover {
+    background-color: var(--color-fucsia-hover) !important;
+}
+
+/* Colores de texto */
+.text-turquesa {
+    color: var(--color-turquesa) !important;
+}
+
+.text-fucsia {
+    color: var(--color-fucsia) !important;
+}
+
+/* Sombras */
+.shadow-lg {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== COMPONENTES PERSONALIZADOS ========== */
+
+/* Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(118, 75, 162, 0.2);
+    border-top-color: var(--color-turquesa);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-turquesa);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-fucsia);
 }

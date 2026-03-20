@@ -1,6 +1,8 @@
+// routes/AdminRoute.jsx
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 
 const AdminRoute = () => {
   const { isAuthenticated, user, loading } = useAuth();
@@ -14,8 +16,8 @@ const AdminRoute = () => {
         height: '100vh',
         background: '#f8f9fa'
       }}>
-        <div className="spinner"></div>
-        <p style={{ marginLeft: '10px' }}>Cargando...</p>
+        <LoadingSpinner />
+        <p style={{ marginLeft: '10px', color: '#764ba2' }}>Cargando...</p>
       </div>
     );
   }
